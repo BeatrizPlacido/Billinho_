@@ -1,4 +1,5 @@
 class Institution < ApplicationRecord
+  self.inheritance_column = :_type_disabled
   has_many :enrollments
 
   validates :name, presence: true, uniqueness: true
