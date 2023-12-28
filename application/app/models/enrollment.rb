@@ -1,4 +1,5 @@
 class Enrollment < ApplicationRecord
+  
   has_many :bills
   belongs_to :institution
   belongs_to :student
@@ -11,30 +12,43 @@ class Enrollment < ApplicationRecord
   after_create :criar_faturas
 
   def criar_faturas
-    require 'date'
-  
     invoice_value = total_course_price / quantity_of_bills
     today = Date.today
-    current_day = today.strftime("%d").to_i
-  
-    if current_day > bill_due_date
-      next_bill = today >> 1
-      due_date = next_bill.strftime("#{bill_due_date}/%m/%Y")
+    current_day = today.day
+    #mês seguinte
+    if current_day > bill_due_date 
       month = 1
-    else
-      due_date = today.strftime("#{bill_due_date}/%m/%Y")
+    #mês atual
+    else 
       month = 0
     end
   
-    bills_to_create = quantity_of_bills.to_i.abs
+    quantity_of_bills.times do
+      due_date = data_vencimento(today, month)
+      due_date_format = due_date.strftime("#{bill_due_date}/%m/%Y")
 
-    while bills_to_create > 0 
-      next_bill = today >> month
-      due_date = next_bill.strftime("#{bill_due_date}/%m/%Y")
-      Bill.create!(invoice_value:invoice_value, due_date:due_date)
-      puts bills_to_create, due_date
-      bills_to_create -= 1
-      month += 1
+      Bill.create!(
+        invoice_value: invoice_value, 
+        due_date: due_date_format,
+        enrollment_id: id,
+        status: "Aberta"
+      )
+
+      month += 1 
     end
   end 
+
+  private
+
+  def data_vencimento(today, month)
+    today = Date.today
+    current_day = today.day
+    #mês seguinte
+    if current_day > bill_due_date 
+      due_date = today.next_month(month)
+    #mês atual
+    else 
+      due_date = today.next_month(month)
+    end
+  end
 end
