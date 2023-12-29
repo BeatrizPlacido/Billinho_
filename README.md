@@ -4,6 +4,16 @@ O projeto tem como objetivo principal o aprendizado do estagiário que está ent
 ## Proposta
 > A empresa Quero Educação está desenvolvendo um sistema para ajudar os alunos a gerenciar suas mensalidades! Esse sistema está quase pronto, mas ainda precisa de uma API para expor os dados do sistema para a instituição de ensino, e o seu objetivo neste desafio é justamente desenvolver essa API
 
+## Backlog
+| Features                                  |Status| 
+|-------------------------------------------|------|
+|Listagem e criação de Instituição de Ensino|      |
+|Listagem e criação de Alunos               |      |
+|Listagem e criação de Matrículas           |      |
+|Listagem de Faturas                        |  ✅  |
+|Interface gráfica                          |      |
+
+
 
 ## Estrutura - Entidades relacionais
 ### Instituição de Ensino
