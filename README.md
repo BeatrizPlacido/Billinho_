@@ -1,10 +1,15 @@
+<div align = "center">
+<a href="#Proposta">Proposta</a> •
+<a href="#iProduct Backlog">Product Backlog</a> •
+</div>
+
 # Billinho: Time de Suporte | Quero Educação
 O projeto tem como objetivo principal o aprendizado do estagiário que está entrando no time de Suporte Graduação. O objetivo desenvolver um modelo de API de gerenciamento das mensalidades, de forma semelhante ao produto Quero Pago, porém, em menor escala.
 
 ## Proposta
 > A empresa Quero Educação está desenvolvendo um sistema para ajudar os alunos a gerenciar suas mensalidades! Esse sistema está quase pronto, mas ainda precisa de uma API para expor os dados do sistema para a instituição de ensino, e o seu objetivo neste desafio é justamente desenvolver essa API
 
-## Backlog
+## Product Backlog 📜
 | Features                                  |Status| 
 |-------------------------------------------|------|
 |Listagem e criação de Instituição de Ensino|      |
