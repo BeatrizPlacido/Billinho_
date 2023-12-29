@@ -10,22 +10,26 @@ class Enrollment < ApplicationRecord
   validates :course_name, presence: true
 
   after_create :criar_faturas
+  before_create :set_today
 
   def criar_faturas
     invoice_value = total_course_price / quantity_of_bills
-    today = Date.today
-    current_day = today.day
-    #mês seguinte
-    if current_day > bill_due_date 
-      month = 1
-    #mês atual
-    else 
-      month = 0
+    #Mês de início da cobrança
+    if @current_day >= bill_due_date #Mês seguinte
+      index = 1
+    else #Mês atual
+      index = 0
     end
   
     quantity_of_bills.times do
-      due_date = data_vencimento(today, month)
-      due_date_format = due_date.strftime("#{bill_due_date}/%m/%Y")
+      due_date = data_vencimento(@today, index)
+
+      #Validação de dia inexistente
+      if bill_due_date >= 29 
+        teste = validation(bill_due_date, index)
+        due_date_format = due_date.strftime("#{teste}/%m/%Y")
+      end
+
 
       Bill.create!(
         invoice_value: invoice_value, 
@@ -34,21 +38,43 @@ class Enrollment < ApplicationRecord
         status: "Aberta"
       )
 
-      month += 1 
+      index += 1 
     end
   end 
 
   private
 
-  def data_vencimento(today, month)
-    today = Date.today
-    current_day = today.day
+  def set_today
+    @today = Date.today
+    @current_day = @today.day
+  end
+
+  def data_vencimento(today, index)
     #mês seguinte
-    if current_day > bill_due_date 
-      due_date = today.next_month(month)
+    if @current_day > bill_due_date 
+      due_date = @today.next_month(index)
     #mês atual
     else 
-      due_date = today.next_month(month)
+      due_date = @today.next_month(index)
     end
+  end
+
+  def validation(bill_due_date, index)
+    thirty_months = {
+      30 => [4, 6, 9, 11]
+    }
+
+    if thirty_months.find { |chave, thirty_months| thirty_months.include?(index) }
+      if bill_due_date == 31
+        bill_due_date = 30
+      end
+    elsif index == 2
+      if bill_due_date >= 29
+        bill_due_date = 28
+      end
+    else
+      bill_due_date = bill_due_date
+    end
+    return bill_due_date
   end
 end
