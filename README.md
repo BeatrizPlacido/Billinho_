@@ -12,11 +12,10 @@ O projeto tem como objetivo principal o aprendizado do estagiário que está ent
 ## Product Backlog 📜
 | Features                                  |Status| 
 |-------------------------------------------|------|
-|Listagem e criação de Instituição de Ensino|      |
-|Listagem e criação de Alunos               |      |
+|Listagem e criação de Instituição de Ensino|  ✅  |
+|Listagem e criação de Alunos               |  ✅  |
 |Listagem e criação de Matrículas           |      |
 |Listagem de Faturas                        |  ✅  |
-|Interface gráfica                          |      |
 
 
 
