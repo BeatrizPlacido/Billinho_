@@ -1,3 +1,5 @@
+![Logo do GitHub](https://github.com/BeatrizPlacido/Billinho_/blob/main/Logo.png)
+
 <div align = "center">
 <a href="#Proposta">Proposta</a> •
 <a href="#iProduct Backlog">Product Backlog</a> •
