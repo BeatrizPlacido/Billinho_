@@ -2,8 +2,8 @@
 
 <div align="center">
   <a href="#Proposta">Proposta</a> •
-  <a href="#Product_Backlog">Product Backlog</a> •
-  <a href="#Estrutura_-_Entidades_relacionais">Estrutura_</a>
+  <a href="#Product Backlog">Product Backlog</a> •
+  <a href="#Estrutura - Entidades relacionais">Estrutura</a>
 </div>
 
 
