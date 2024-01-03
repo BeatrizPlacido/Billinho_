@@ -1,4 +1,4 @@
-![Logo do GitHub](https://github.com/BeatrizPlacido/Billinho_/blob/main/Logo.png)
+![Logo do GitHub](https://github.com/BeatrizPlacido/Billinho_/blob/main/Images/Logo.png)
 
 <div align="center">
   <a href="#Product-Backlog">Product Backlog</a> •
@@ -18,7 +18,7 @@ O projeto tem como objetivo principal o aprendizado do estagiário que está ent
 |-------------------------------------------|------|
 |Listagem e criação de Instituição de Ensino|  ✅  |
 |Listagem e criação de Alunos               |  ✅  |
-|Listagem e criação de Matrículas           |      |
+|Listagem e criação de Matrículas           |  ✅  |
 |Listagem de Faturas                        |  ✅  |
 
 
@@ -61,12 +61,12 @@ O projeto tem como objetivo principal o aprendizado do estagiário que está ent
 |status         |Text   |Not null, Aberta, Atrasada ou Paga, sendo o valor default Aberta|
 
 ## Tecnologias e Ferramentas
-![Logo do Rails](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.stickpng.com%2Fimg%2Ficons-logos-emojis%2Ftech-companies%2Fruby-on-rails-round-logo&psig=AOvVaw0S8hyEDAEJG0PvlDGhBbim&ust=1704332160961000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKDn6ZuKwIMDFQAAAAAdAAAAABAI)
 
-![Logo do Ruby](https://www.google.com/url?sa=i&url=https%3A%2F%2Ficonscout.com%2Ficons%2Fruby&psig=AOvVaw1nxT_KA-zdc6Ogz_9Qf39p&ust=1704332241236000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLiG08iKwIMDFQAAAAAdAAAAABAJ)
+<div style="display: inline_block"><br>
+  <img align="center" alt="Rails" height="50" src="https://github.com/BeatrizPlacido/Billinho_/blob/main/Images/RAILS.png" />
+  <img align="center" alt="Ruby" height="50" src="https://github.com/BeatrizPlacido/Billinho_/blob/main/Images/RUBY.png" />
+  <img align="center" alt="Postman" height="50" src="https://github.com/BeatrizPlacido/Billinho_/blob/main/Images/POSTMAN.png" />
+  <img align="center" alt="SQL" height="50" src="https://github.com/BeatrizPlacido/Billinho_/blob/main/Images/SQL.png" />
+  <img align="center" alt="Json" height="50" src="https://github.com/BeatrizPlacido/Billinho_/blob/main/Images/JSON.png" />
+</div>
 
-![Logo do Postman](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.stickpng.com%2Fimg%2Ficons-logos-emojis%2Ftech-companies%2Fpostman-logo&psig=AOvVaw1MeWjQHhEovNM7u8qdj9xg&ust=1704332295378000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPDBi9yKwIMDFQAAAAAdAAAAABAc)
-
-![Logo do Json](https://www.google.com/url?sa=i&url=https%3A%2F%2Ffreebiesupply.com%2Flogos%2Fjson-logo%2F&psig=AOvVaw2gNc0Vw3tDKM-piCXh9BC8&ust=1704332366046000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJiCn4CLwIMDFQAAAAAdAAAAABAD)
-
-![Logo do SQL](https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3ASql_data_base_with_logo.png&psig=AOvVaw21iUjawO3Q2bxWhPKPs27Z&ust=1704332425525000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPiK_6GLwIMDFQAAAAAdAAAAABAm)
