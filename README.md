@@ -1,9 +1,11 @@
 ![Logo do GitHub](https://github.com/BeatrizPlacido/Billinho_/blob/main/Logo.png)
 
-<div align = "center">
-<a href="#Proposta">Proposta</a> •
-<a href="#iProduct Backlog">Product Backlog</a> •
+<div align="center">
+  <a href="#Proposta">Proposta</a> •
+  <a href="#Product_Backlog">Product Backlog</a> •
+  <a href="#Estrutura_-_Entidades_relacionais">Estrutura_</a>
 </div>
+
 
 # Billinho: Time de Suporte | Quero Educação
 O projeto tem como objetivo principal o aprendizado do estagiário que está entrando no time de Suporte Graduação. O objetivo desenvolver um modelo de API de gerenciamento das mensalidades, de forma semelhante ao produto Quero Pago, porém, em menor escala.
