@@ -16,28 +16,33 @@ class Enrollment < ApplicationRecord
     invoice_value = total_course_price / quantity_of_bills
 
     today = Date.today
+    
+    #Mês de início da cobrança
     current_day = today.day
 
-    #Mês de início da cobrança
     if current_day >= bill_due_date #Mês seguinte
       index = 1
     else #Mês atual
       index = 0
     end
+    #########################################
   
     quantity_of_bills.times do
+      #validação da data
       due_date = today.next_month(index)
       bill_month = due_date.strftime("%m").to_i
       bill_year = due_date.strftime("%Y").to_i
       
-      validation = Date.valid_date?(2023, bill_month, bill_due_date)
+      validation = Date.valid_date?(bill_year, bill_month, bill_due_date)
 
       if validation == false
         due_date_format = Date.new(bill_year,bill_month,-1)
       else
         due_date_format = Date.new(bill_year, bill_month, bill_due_date)
       end
+      #########################################
 
+      #Criar fatura
       Bill.create!(
         invoice_value: invoice_value, 
         due_date: due_date_format,
@@ -46,6 +51,7 @@ class Enrollment < ApplicationRecord
       )
 
       index += 1
+      #########################################
     end
   end 
 end
