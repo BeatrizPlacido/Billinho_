@@ -1,5 +1,5 @@
 class Enrollment < ApplicationRecord
-  
+
   has_many :bills
   belongs_to :institution
   belongs_to :student
@@ -14,15 +14,12 @@ class Enrollment < ApplicationRecord
 
   def criar_faturas
     invoice_value = total_course_price / quantity_of_bills
-    #Data da primeira cobrança
     initial_bill(@current_day, @index)
     quantity_of_bills.times do
-      #Validação da data
       validation(@index, @today, @due_date_format)
 
-      #Criar fatura
       Bill.create!(
-        invoice_value: invoice_value, 
+        invoice_value: invoice_value,
         due_date: @due_date_format,
         enrollment_id: id,
         status: "Aberta"
@@ -30,10 +27,10 @@ class Enrollment < ApplicationRecord
 
       @index += 1
     end
-  end 
+  end
 
   private
-  
+
   def set_today
     @today = Date.today
     @current_day = @today.day
@@ -42,9 +39,9 @@ class Enrollment < ApplicationRecord
   end
 
   def initial_bill(current_day, index)
-    if @current_day >= bill_due_date #Mês seguinte
+    if @current_day >= bill_due_date
       @index = 1
-    else #Mês atual
+    else
       @index = 0
     end
     return @index
@@ -54,13 +51,13 @@ class Enrollment < ApplicationRecord
     due_date = @today.next_month(@index)
     bill_month = due_date.strftime("%m").to_i
     bill_year = due_date.strftime("%Y").to_i
-    
+
     validation = Date.valid_date?(bill_year, bill_month, bill_due_date)
 
     if validation == false
       @due_date_format = Date.new(bill_year,bill_month,-1)
     else
       @due_date_format = Date.new(bill_year, bill_month, bill_due_date)
-    end 
+    end
   end
 end
