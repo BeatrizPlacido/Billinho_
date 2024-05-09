@@ -4,10 +4,10 @@ class Institution < ApplicationRecord
   has_many :enrollments
 
   validates :name, presence: true, uniqueness: true
-  validates :cnpj, presence: true, uniqueness: true, format: { with: /\A\d+\z/, message: "Deve conter apenas números" }
+  validates :cnpj, presence: true, uniqueness: true, format: { with: /\A\d+\z/, message: "deve conter apenas números" }
   validates :type, inclusion: { in: ["Universidade", "Escola", "Creche"] }
   validates :number, presence: true, numericality: { only_integer: true }
-  validates :cep, presence: true, format: { with: /\A\d{5}-\d{3}\z/, message: "O CEP deve ser passado no formato 00000-000"}
+  validates :cep, presence: true, format: { with: /\A\d{5}-\d{3}\z/, message: "deve ser passado no formato 00000-000"}
 
   before_create :search_address
 
