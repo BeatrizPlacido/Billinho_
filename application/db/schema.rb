@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_26_184645) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_28_151236) do
   create_table "bills", force: :cascade do |t|
     t.decimal "invoice_value"
     t.date "due_date"
@@ -40,6 +40,12 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_26_184645) do
     t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
+    t.integer "number"
+    t.string "neighborhood"
+    t.string "city"
+    t.string "state"
+    t.string "cep"
   end
 
   create_table "students", force: :cascade do |t|
@@ -51,6 +57,12 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_26_184645) do
     t.string "payment_method"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
+    t.integer "number"
+    t.string "neighborhood"
+    t.string "city"
+    t.string "state"
+    t.string "cep"
   end
 
   add_foreign_key "bills", "enrollments"

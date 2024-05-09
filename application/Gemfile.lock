@@ -177,6 +177,7 @@ GEM
     timeout (0.4.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    viacep (2.0.3)
     webrick (1.8.1)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
@@ -194,6 +195,7 @@ DEPENDENCIES
   rails (~> 7.1.2)
   sqlite3 (~> 1.4)
   tzinfo-data
+  viacep
 
 RUBY VERSION
    ruby 3.0.2p107
