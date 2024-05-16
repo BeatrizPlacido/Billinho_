@@ -13,7 +13,7 @@ O objetivo é desenvolver um modelo de API de gerenciamento das mensalidades, de
 ## Proposta
 > A empresa Quero Educação está desenvolvendo um sistema para ajudar os alunos a gerenciar suas mensalidades! Esse sistema está quase pronto, mas ainda precisa de uma API para expor os dados do sistema para a instituição de ensino, e o seu objetivo neste desafio é justamente desenvolver essa API
 
-## Product Backlog 📜
+## Product Backlog
 | Features                                  |Status| 
 |-------------------------------------------|------|
 |Listagem e criação de Instituição de Ensino|  ✅  |
@@ -60,13 +60,5 @@ O objetivo é desenvolver um modelo de API de gerenciamento das mensalidades, de
 |matricula_id   |FK     |Not null                                                        | 
 |status         |Text   |Not null, Aberta, Atrasada ou Paga, sendo o valor default Aberta|
 
-## Tecnologias e Ferramentas
 
-<div style="display: inline_block"><br>
-  <img align="center" alt="Rails" height="50" src="https://github.com/BeatrizPlacido/Billinho_/blob/main/Images/RAILS.png" />
-  <img align="center" alt="Ruby" height="50" src="https://github.com/BeatrizPlacido/Billinho_/blob/main/Images/RUBY.png" />
-  <img align="center" alt="Postman" height="50" src="https://github.com/BeatrizPlacido/Billinho_/blob/main/Images/POSTMAN.png" />
-  <img align="center" alt="SQL" height="50" src="https://github.com/BeatrizPlacido/Billinho_/blob/main/Images/SQL.png" />
-  <img align="center" alt="Json" height="50" src="https://github.com/BeatrizPlacido/Billinho_/blob/main/Images/JSON.png" />
-</div>
 
