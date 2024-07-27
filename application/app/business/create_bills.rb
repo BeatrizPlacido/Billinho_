@@ -1,18 +1,28 @@
 class CreateBills
-  attr_accessor :full_value, :installments, :due_day, :id
+  attr_accessor :full_value, :installments, :due_day, :enrollment_id
 
-  def initialize(full_value, installments, due_day, id)
+  def initialize(full_value, installments, due_day, enrollment_id)
     @full_value = full_value
     @installments = installments
     @due_day = due_day
-    @id = id
+    @enrollment_id = enrollment_id
   end
 
   def perform
-    create_bills
+    validate!
+
+    ActiveRecord::Base.transaction do
+      create_bills
+    end
   end
 
   private
+
+  def validate!
+    raise ArgumentError, 'full_value must be valid' if full_value <= 0
+    raise ArgumentError, 'installments must be valid' if installments <= 0
+    raise ArgumentError, 'due_day must be valid' if due_day < 1 || due_day > 31
+  end
 
   def create_bills
     first_installment_due_date
@@ -21,7 +31,7 @@ class CreateBills
       Bill.create!(
         invoice_value: installment_value,
         due_date: installment_due_date(@index),
-        enrollment_id: id,
+        enrollment_id: enrollment_id,
         status: "Aberta"
       )
 
