@@ -14,7 +14,6 @@ class Enrollment < ApplicationRecord
   private
 
   def create_bills
-    create_bills_service = CreateBills.new(total_course_price, quantity_of_bills, bill_due_date, id)
-    create_bills_service.perform
+    CreateBills.new(total_course_price, quantity_of_bills, bill_due_date, id).perform
   end
 end
