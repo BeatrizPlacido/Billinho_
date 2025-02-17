@@ -14,13 +14,6 @@ class Institution < ApplicationRecord
   private
 
   def search_address
-    address = ViaCep::Address.new(cep)
-
-    self.address = address.address
-    self.neighborhood = address.neighborhood
-    self.city = address.city
-    self.state = address.state
-
-  rescue ViaCep::ApiRequestError => _error
+    ZipcodeValidator.new(cep).search_address(self)
   end
 end
