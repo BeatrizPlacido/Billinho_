@@ -22,7 +22,7 @@ class CreateBills
         invoice_value: installment_value,
         due_date: installment_due_date(@index),
         enrollment_id: id,
-        status: "Aberta"
+        status: :waiting_payment
       )
 
       @index +=1
@@ -43,7 +43,7 @@ class CreateBills
     if Date.valid_date?(date.strftime("%Y").to_i, date.strftime("%m").to_i, due_day)
       due_date = Date.new(date.year, date.month, due_day)
     else
-      due_date = Date.new(date.year, date.month,-1)
+      due_date = Date.new(date.year, date.month, -1)
     end
 
     due_date
