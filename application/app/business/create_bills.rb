@@ -15,7 +15,7 @@ class CreateBills
   attr_accessor :full_value, :installments, :due_day, :id
 
   def create_bills
-    first_installment_due_date
+    first_bill_due_date
 
     installments.times do
       Bill.create!(
@@ -29,7 +29,7 @@ class CreateBills
     end
   end
 
-  def first_installment_due_date
+  def first_bill_due_date
     @index = Date.today.day >= due_day ? 1 : 0
   end
 
