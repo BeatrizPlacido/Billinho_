@@ -1,5 +1,5 @@
 class Institution < ApplicationRecord
-  PERMITTED_TYPES = %i[university  elementary_school middle_school]
+  PERMITTED_TYPES = %w[university  elementary_school middle_school]
 
   self.inheritance_column = :_type_disabled
 

@@ -1,5 +1,5 @@
 class Bill < ApplicationRecord
-  PERMITTED_STATUSES = %i[waiting_payment pending paid]
+  PERMITTED_STATUSES = %w[waiting_payment pending paid]
 
   belongs_to :enrollment
 
