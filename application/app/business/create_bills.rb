@@ -1,6 +1,4 @@
 class CreateBills
-  attr_accessor :full_value, :installments, :due_day, :id
-
   def initialize(full_value, installments, due_day, id)
     @full_value = full_value
     @installments = installments
@@ -13,6 +11,8 @@ class CreateBills
   end
 
   private
+
+  attr_accessor :full_value, :installments, :due_day, :id
 
   def create_bills
     first_installment_due_date
@@ -34,18 +34,18 @@ class CreateBills
   end
 
   def installment_value
-    full_value / installments
+    @installment_value ||= full_value / installments
   end
 
   def installment_due_date(index)
     date = Date.today.next_month(@index)
 
-    if Date.valid_date?(date.strftime("%Y").to_i, date.strftime("%m").to_i, due_day)
-      due_date = Date.new(date.year, date.month, due_day)
-    else
-      due_date = Date.new(date.year, date.month, -1)
-    end
+    return Date.new(date.year, date.month, due_day) if valid_date?(date)
 
-    due_date
+    Date.new(date.year, date.month, -1)
+  end
+
+  def valid_date?(date)
+    Date.valid_date?(date.strftime("%Y").to_i, date.strftime("%m").to_i, due_day)
   end
 end
