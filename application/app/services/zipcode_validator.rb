@@ -13,4 +13,8 @@ class ZipcodeValidator
 
   rescue ViaCep::ApiRequestError => _error
   end
+
+  private
+
+  attr_reader :zipcode
 end
